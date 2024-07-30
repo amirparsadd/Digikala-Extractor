@@ -1,15 +1,16 @@
 // A tool for scraping products off digikala
 // Paste in the console and enjoy ;)
-
 // Works For Any Product Category Or Search
-
 // Paste The Results Into The Python File
+
+VERBOSE = true
 
 found = []
 document.querySelectorAll('[data-testid=product-card]').forEach(product => {found.push(product.children[0].children[1].children[1])})
 
 found.sort()
 
+// Function For Converting Persian Numbers To English
 const p2e = s => s.replace(/[۰-۹]/g, d => '۰۱۲۳۴۵۶۷۸۹'.indexOf(d))
 
 namesList = []
@@ -31,6 +32,8 @@ found.forEach(pr => {
     namesList.push(PRODUCT_NAME)
     totalPrice += PRODUCT_PRICE
     
+    if(!VERBOSE) return
+
     console.log("\n========")
     console.log(PRODUCT_NAME)
     console.log(PRODUCT_PRICE)
