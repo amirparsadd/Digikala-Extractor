@@ -1,7 +1,7 @@
 // A tool for scraping products off digikala
 // Paste in the console and enjoy ;)
 // Works For Any Product Category Or Search
-// Paste The Results Into The Python File
+// Paste The Results Into data.txt
 
 VERBOSE = true
 
